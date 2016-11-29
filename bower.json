@@ -1,0 +1,22 @@
+{
+  "name": "Project",
+  "version": "0.0.0",
+  "homepage": " ",
+  "authors": [
+    "Yoon Jihoon <wlgnswlgns13@naver.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bourbon": "~4.2.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}
