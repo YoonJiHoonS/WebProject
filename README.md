@@ -21,6 +21,7 @@
 (Option) 사진 정보 등록 및 사진 표시
 (Option) 우편번호 검색을 통한 주소 입력 (DAUM API활용가능)
 (Option) 주소 정보 지도에서 표시
+
 3. 예약
 
 여행자는 원하는 도시의 숙소 목록을 볼 수 있다.
@@ -47,5 +48,6 @@ Heroku와 Mongolab을 이용하여 웹 사이트를 인터넷에 공개하는 �
 (Option) 에어 비앤비의 숙소 목록이나 상세 보기 페이지 등의 UI를 참조하여 유사한 UI를 구현하면 가산점
 (Option) 전체 웹 사이트가 모바일에서 활용가능한 Responsive 페이지이면 가산점 부여
 (Option) Ajax 기술, 혹은 WebSocket 기술을 활용하면 가산점 부여 
+
 "#WebProject" 
-"# WebProject" 
+
