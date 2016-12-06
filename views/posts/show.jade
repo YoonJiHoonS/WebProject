@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header= post.content
+    p
+      b by #{post.name}
+      span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+      | 
+      | (조회수 #{post.read})
+    p.well(style='white-space:pre;')= post.name
+    p.well(style='white-spae:pre;')= post.city
+    p.well(style='white-spae:pre;')= post.address
+    p.well(style='white-spae:pre;')= post.content
+    p.well(style='white-spae:pre;')= post.facility
+    p.well(style='white-spae:pre;')= post.rule
+    p.well(style='white-spae:pre;')= post.fee
+
+    a.btn.btn-default(href='/posts') 목록

@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 숙소 등록 내역
+    
+    //- | total #{pagination.numPosts} posts
+    table.table.table-bordered
+      thead
+        tr
+          th 숙소 이름
+          th 숙소 위치
+          th 상세 내역
+          th 등록 일자
+          th 조회 수
+          th 
+      tbody
+        each post in posts
+          tr
+            td= post.name 
+            td= post.city
+            td 
+             a(href='/posts/#{post.id}')= post.content
+            td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            td= post.read
+            td  
+              a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
+              | 
+              a.btn.btn-xs.btn-default(data-id=post.id, class='delete') 삭제
+    a.btn.btn-primary(href='/posts/new') 숙소등록
+     
+    form#deleteForm(style='display:none', method="POST")
+            
+    script(type='text/javascript').
+      $(".delete").click(function(e) {
+        var id = $(e.currentTarget).data('id');
+        if (confirm('정말 삭제하시겠습니까?')) {
+          $("#deleteForm").attr('action', "/posts/" + id + "?_method=DELETE").submit();          
+        }
+        return false;
+      });            
+   
