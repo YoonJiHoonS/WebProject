@@ -3,28 +3,28 @@ extends ../layout
 block content
   .container
     if post.id
-      h1.page-header 숙소수정
+      h1.page-header 숙소 수정
     else
-      h1.page-header 숙소등록
+      h1.page-header 숙소 등록
 
     form(action = (post.id) ? "/posts/#{post.id}?_method=PUT" : "/posts", method='POST')
       .form-group
-        label(for='name') 숙소이름
+        label(for='name') 숙소 이름
         input.form-control(type='name', id='name', name='name', placeholder='Name', value=post.name)
       .form-group 
         label(for='city') 도시
         input.form-control(type='city', id='city', name='city', placeholder='City', value=post.city)
-        label(for='title') 숙소 주소
+        label(for='address') 숙소 주소
         input.form-control(type='address', id='address', name='address', placeholder='Address', value=post.address)
       .form-group 
-        label(for='content') 숙소 상세설명
-        textarea.form-control(id='content', rows='5', name='content', placeholder='content here')= post.content
-        label(for='content') 편의 시설
-        textarea.form-control(id='facility', rows='5', name='facility', placeholder='facility')= post.facility
+        label(for='content') 숙소 상세 설명
+        textarea.form-control(id='content', rows='10', name='content', placeholder='content here')= post.content
+        label(for='facility') 편의 시설
+        textarea.form-control(id='facility', rows='5', name='facility', placeholder='Facility')= post.facility
         label(for='rule') 이용 규칙
-        textarea.form-control(id='rule', rows='3', name='rule', placeholder='rule')= post.content
+        textarea.form-control(id='rule', rows='3', name='rule', placeholder='Rule')= post.rule
         label(for='fee') 숙소 요금
-        input.form-control(type='fee', id='fee', name='fee', placeholder='Fee', value=post.fee)
+        textarea.form-control(id='fee', rows='1', name='fee', placeholder='Fee')= post.fee
       
       div.form-actions
         a.btn.btn-default(href='javascript:window.history.back();') 뒤로 

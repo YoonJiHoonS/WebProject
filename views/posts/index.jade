@@ -1,8 +1,7 @@
 extends ../layout
-
 block content
   .container
-    h1.page-header 숙소 등록 내역
+    h1.page-header 숙소 등록 현황
     
     //- | total #{pagination.numPosts} posts
     table.table.table-bordered
@@ -17,18 +16,19 @@ block content
       tbody
         each post in posts
           tr
-            td= post.name 
+            td= post.name
             td= post.city
             td 
              a(href='/posts/#{post.id}')= post.content
             td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
             td= post.read
-            td  
+            td
               a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
-              | 
+              
               a.btn.btn-xs.btn-default(data-id=post.id, class='delete') 삭제
+    
     a.btn.btn-primary(href='/posts/new') 숙소등록
-     
+    
     form#deleteForm(style='display:none', method="POST")
             
     script(type='text/javascript').
@@ -38,5 +38,5 @@ block content
           $("#deleteForm").attr('action', "/posts/" + id + "?_method=DELETE").submit();          
         }
         return false;
-      });            
-   
+      });
+

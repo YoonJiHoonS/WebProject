@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 Reserve
+  hr
+  .form
+    input.form-control(type='text', id='q', size=20, placeholder='Type your country')
+    i.fa.fa-spin.fa-spinner
+    ul.suggest-box
+      
+  script(src='/javascripts/find.js')
+  

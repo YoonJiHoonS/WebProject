@@ -13,8 +13,11 @@ var configAuth = require('./config/auth');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var routeAuth = require('./routes/auth');
 var posts = require('./routes/posts');
+var find = require('./routes/find');
+
+
+var routeAuth = require('./routes/auth');
 
 var app = express();
 
@@ -37,6 +40,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
 
 app.use(session({
   resave: true,
@@ -63,6 +68,9 @@ configAuth(passport);
 app.use('/', routes);
 app.use('/users', users);
 app.use('/posts', posts);
+app.use('/find', find);
+
+
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler
